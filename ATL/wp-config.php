@@ -1,79 +1,90 @@
 <?php
 /**
- * WordPress için taban ayar dosyası.
+ * The base configuration for WordPress
  *
- * Bu dosya şu ayarları içerir: MySQL ayarları, tablo öneki,
- * gizli anahtaralr ve ABSPATH. Daha fazla bilgi için
- * {@link https://codex.wordpress.org/Editing_wp-config.php wp-config.php düzenleme}
- * yardım sayfasına göz atabilirsiniz. MySQL ayarlarınızı servis sağlayıcınızdan edinebilirsiniz.
+ * The wp-config.php creation script uses this file during the
+ * installation. You don't have to use the web site, you can
+ * copy this file to "wp-config.php" and fill in the values.
  *
- * Bu dosya kurulum sırasında wp-config.php dosyasının oluşturulabilmesi için
- * kullanılır. İsterseniz bu dosyayı kopyalayıp, ismini "wp-config.php" olarak değiştirip,
- * değerleri girerek de kullanabilirsiniz.
+ * This file contains the following configurations:
+ *
+ * * MySQL settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://codex.wordpress.org/Editing_wp-config.php
  *
  * @package WordPress
  */
 
-// ** MySQL ayarları - Bu bilgileri sunucunuzdan alabilirsiniz ** //
-/** WordPress için kullanılacak veritabanının adı */
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
 define( 'DB_NAME', 'atl' );
 
-/** MySQL veritabanı kullanıcısı */
+/** MySQL database username */
 define( 'DB_USER', 'atltech06' );
 
-/** MySQL veritabanı parolası */
+/** MySQL database password */
 define( 'DB_PASSWORD', 'XXVI.sk.2006' );
 
-/** MySQL sunucusu */
+/** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
 
-/** Yaratılacak tablolar için veritabanı karakter seti. */
+/** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
 
-/** Veritabanı karşılaştırma tipi. Herhangi bir şüpheniz varsa bu değeri değiştirmeyin. */
-define('DB_COLLATE', '');
+/** The Database Collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
 
 /**#@+
- * Eşsiz doğrulama anahtarları.
+ * Authentication Unique Keys and Salts.
  *
- * Her anahtar farklı bir karakter kümesi olmalı!
- * {@link http://api.wordpress.org/secret-key/1.1/salt WordPress.org secret-key service} servisini kullanarak yaratabilirsiniz.
- * Çerezleri geçersiz kılmak için istediğiniz zaman bu değerleri değiştirebilirsiniz. Bu tüm kullanıcıların tekrar giriş yapmasını gerektirecektir.
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'pa0tq<!-es}9xn>07iW~T9KqkCf3;W`qPW7uXCvqM(TkQTj$Loa=;pz`~neu&[^]' );
-define( 'SECURE_AUTH_KEY',  'jd!lqzj+Y5r-`O}@t/ZdqrK_{ nT?G=2#[(8lD!+-C&#M@zU%;,k$ *51[12h6HT' );
-define( 'LOGGED_IN_KEY',    'qU|rn8Hc ZJyG_r_:!h>9~>alb`T ~qdfO4$N< Y*m7q1oOtbV!67;8&,WM.^i~+' );
-define( 'NONCE_KEY',        'O}l)yM, _vOj-B6C@>8=k~6wf=a~^&spY91N1rCj]?0-mUSXo`dX?-O;q^]#5Q(B' );
-define( 'AUTH_SALT',        'G$m9(]$k.>2h3pIZ4ODV&pRnnKXc7DnuJ}<!<9Y`8.:Hc3&k+bgJF8lgpxVQ^/i=' );
-define( 'SECURE_AUTH_SALT', 'JZPMZwQm }khQ@jt288AO@=KO(di/!6IPR@9CAh&z$+@{;Lkmg)aC0J^wmm.ur%G' );
-define( 'LOGGED_IN_SALT',   'lhj)^#.GHg.<2R?c2y`FNu]%Itf3(odn=eRzPArU=*,.[]:|W8Wm9+{J_,O_`/Rn' );
-define( 'NONCE_SALT',       '~Bo8>>rr,$J{#pc7T9C}[mfG[H[),-7B|I<@oI9c$TE5-fJ7o)5bNKxHS,$b)bK|' );
+define( 'AUTH_KEY',         '8=!=zmVf6]Bc>(1v~<Hv{e%S$]e,gSWReeS:}^PWxSH2+[:7u>.SuZ$nL%gC[1Qh' );
+define( 'SECURE_AUTH_KEY',  '$5[rQ;8_*7&BZH$<luVfu>lBTO>OQio7G=GF_J=F.wUi3ewvZLA dn`I8`Zt52&&' );
+define( 'LOGGED_IN_KEY',    '`av22cl>ileJzbKhJ/FZD@Xv3Y6@2>)<0`0>)G][-;AR.ibfInc=|NYj#Y2cYSSW' );
+define( 'NONCE_KEY',        'zVb7yWAfgDE:c5>AFS;4Z2V _, ,P/edx ![R+L{g{#n]+fjr$-pOtC,qL3Is5$-' );
+define( 'AUTH_SALT',        '.IJK~w,T^w5q[wULS<u& WblUYX9[,ni8/OM)]e0XuTUIQUak1b:+4f^k}| sQgW' );
+define( 'SECURE_AUTH_SALT', 'Fp$Rq7}>V_N7gbt@:_oLbm.}@JY>;-ZWdc8V#5Oztc]eY6GYn[C]kGy&dd_pj:~M' );
+define( 'LOGGED_IN_SALT',   'Fkf]:Pc_5X&XaO>S!}G2/bdotV<d5x^Y9gHZRsM.nX }mm-33Fsz#LYn6,?V&tFL' );
+define( 'NONCE_SALT',       'Z.Vz~30nKon(iaVvj%q0H!lk%eq|$nrcot+l?2uwQq+N)`0XH4u6rX/GyvxTWz=.' );
+
 /**#@-*/
 
 /**
- * WordPress veritabanı tablo ön eki.
+ * WordPress Database Table prefix.
  *
- * Tüm kurulumlara ayrı bir önek vererek bir veritabanına birden fazla kurulum yapabilirsiniz.
- * Sadece rakamlar, harfler ve alt çizgi lütfen.
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix = 'wp_';
 
 /**
- * Geliştiriciler için: WordPress hata ayıklama modu.
+ * For developers: WordPress debugging mode.
  *
- * Bu değeri "true" yaparak geliştirme sırasında hataların ekrana basılmasını sağlayabilirsiniz.
- * Tema ve eklenti geliştiricilerinin geliştirme aşamasında WP_DEBUG
- * kullanmalarını önemle tavsiye ederiz.
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the Codex.
+ *
+ * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
+define( 'WP_DEBUG', false );
 
-/* Hepsi bu kadar. Mutlu bloglamalar! */
+/* That's all, stop editing! Happy publishing. */
 
-/** WordPress dizini için mutlak yol. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+/** Absolute path to the WordPress directory. */
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+}
 
-/** WordPress değişkenlerini ve yollarını kurar. */
-require_once(ABSPATH . 'wp-settings.php');
+/** Sets up WordPress vars and included files. */
+require_once( ABSPATH . 'wp-settings.php' );
